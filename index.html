@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="https://npmcdn.com/basscss@7.1.1/css/basscss.min.css">
+    <title>TwitchTV Dashboard</title>
+    <meta name="description" content="Dashboard displaying the status of a subgroup of TwitchTV users. Built for FreeCodeCamp.">
+    <meta name="author" content="Brian Zelip">
+    <meta name="keywords" content="TwitchTV, api, FreeCodeCamp, javascript, Basscss, oocss, atomic_CSS, jquery">
+    <script src="https://cdn.jsdelivr.net/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+      .h0 { font-size: 3rem; }
+      .no-underline,
+      .no-underline:hover { text-decoration: none; }
+      .hover-bg-gray:hover { background-color: #eee; }
+      .hover-default:hover { cursor: default; }
+      .pointer { cursor: pointer; }
+      .hunnid {
+        width: 100px;
+        height: 100px;
+      }
+      .is-active {
+        box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),inset 0 3px 4px 0 rgba(0,0,0,.25),0 0 1px rgba(0,0,0,.125);
+      }
+      .flex-center { align-items: center; }
+      .align-self--end { align-self: flex-end; }
+      .justify-end { justify-content: flex-end; }
+      .break-word { word-break: break-all; }
+      .btn-primary:active { box-shadow: none; }
+      .is-active::before { content: "Showing "; }
+      .btn-primary:not(.is-active)::before { content: "Show "; }
+      @media(min-width: 40em) {
+        .h0 { font-size: 4rem; }
+        .sm-mb0 { margin-bottom: 0; }
+        .sm-mr1 { margin-right: .5rem; }
+        .sm-mt3 { margin-top: 2rem; }
+        .sm-py0 {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+        .sm-p2 { padding: 1rem; }
+        .sm-flex-row { flex-direction: row; }
+        .sm-flex-center { align-items: center; }
+        .sm-justify-end { justify-content: flex-end; }
+        .sm-justify-around { justify-content: space-around; }
+        .sm-justify-between { justify-content: space-between; }
+        .sm-flex-grow { flex: 1 0 auto; }
+        .sm-flex-auto { flex: 1 1 auto; }
+        .sm-flex-none { flex: none; }
+        .sm-center { text-align: center; }
+      }
+      @media(min-width: 52em) {
+        .md-flex-top { align-items: flex-start; }
+        .md-center { text-align: center; }
+        .md-h1 { font-size: 2rem; }
+        .md-h2 { font-size: 1.5rem; }
+      }
+      @media(min-width: 64em) {
+        .lg-left { text-align: left; }
+        .lg-h1 { font-size: 2rem; }
+        .lg-h2 { font-size: 1.5rem; }
+        .lg-flex-center { align-items: center; }
+      }
+      #Data a:last-of-type>div {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: rgba(0,0,0,.125);
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header class="sm-mt3 container p2 clearfix mx-auto">
+      <h1 class="h0 m0 center">Select Twitch Streams</h1>
+      <section class="flex flex-column sm-flex-row sm-justify-around mt2 lg-col-9 md-col-11 mx-auto">
+        <button class="btn btn-primary flex-auto mb1 sm-mb0 sm-mr1" id="all">all</button>
+        <button class="btn btn-primary flex-auto mb1 sm-mb0 sm-mr1" id="online">online</button>
+        <button class="btn btn-primary flex-auto" id="offline">offline</button>
+      </section>
+    </header>
+
+    <div id="Data" class="container p2 clearfix mx-auto"></div>
+
+    <footer class="container p2 clearfix mx-auto">
+      <p class="center">💪 Struggled with thru completion by <a href="https://twitter.com/bzelip">@bzelip</a> for <a href="https://freecodecamp.com">FreeCodeCamp</a> using <a href="http://basscss.com">Basscss</a>. 💪</p>
+    </footer>
+
+    <script src="twitch.js"></script>
+
+  </body>
+
+</html>
+
+<!--
+For more references see ./twitch.js
+- child selectors: https://developer.mozilla.org/en-US/docs/Web/CSS/Child_selectors
+- last-of-type: https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type
+- ::before: https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+- :not(): https://developer.mozilla.org/en-US/docs/Web/CSS/:not
+- valid js variable checker: https://mothereff.in/js-variables
+- onload function: http://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load
+-->
+
